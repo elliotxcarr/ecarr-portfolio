@@ -1,5 +1,6 @@
 import React from "react";
 import video from "../assets/Space.mp4"
+import profilePic from "../assets/profilepic.png"
 import { motion } from "framer-motion";
 import Links from "../component/Links";
 import useMediaQuery from "../hooks/useMediaQuery";
@@ -33,7 +34,7 @@ const Home = ({selectedPage, setSelectedPage})=>{
                     before:z-[-1]">
 
                         <img alt="profile" className="hover:filter hover:brightness-125 transition duration-500 z-10 
-                        md:max-w-[450px]" src='src/assets/profilepic.png' />
+                        md:max-w-[450px]" src={profilePic}  />
 
                     </div>
                     </div>
@@ -48,7 +49,7 @@ const Home = ({selectedPage, setSelectedPage})=>{
                     before:z-[-1]">
 
                         <img alt="profile" className="hover:filter hover:saturate-200 transition duration-500 z-10 w-[360px]
-                        max-w-[250px] md:max-w-[350px]" src='src/assets/profilepic.png' />
+                        max-w-[250px] md:max-w-[350px]" src={profilePic} />
 
                     </div>
                     </div>

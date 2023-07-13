@@ -1,7 +1,13 @@
 
 import { motion } from "framer-motion"
 import React from "react"
-
+import project1 from "../assets/project-1.jpeg"
+import project2 from "../assets/project-2.jpeg"
+import project3 from "../assets/project-3.jpeg"
+import project4 from "../assets/project-4.jpeg"
+import project5 from "../assets/project-5.jpeg"
+import project6 from "../assets/project-6.jpeg"
+import project7 from "../assets/project-7.jpeg"
 
 const projectVariant = {
     hidden: { opacity: 0 , scale :0.8},
@@ -14,7 +20,8 @@ const Project = ({title}) =>{
     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-dark`;
 
     
-    const ProjectTitle = title.split(" ").join("-").toLowerCase();
+    const ProjectTitle = title.split(" ").join("").toLowerCase();
+
 
     return(
         <motion.div
@@ -26,7 +33,7 @@ const Project = ({title}) =>{
                     This is a project created by me to showcase my skills in this that and the next thing
                 </p>
             </div>
-            <img src={`src/assets/${ProjectTitle}.jpeg`} alt={ProjectTitle}/>
+            <img src={ProjectTitle} alt={ProjectTitle}/>
         </motion.div>
     )
 }
@@ -55,15 +62,15 @@ const Mobile = () =>{
                     >
                            
                         
-                        <Project title="Project 3"/>
-                        <Project title="Project 6"/>
+                        <Project title={project3}/>
+                        <Project title={project6}/>
 
-                        <Project title="Project 1"/>
-                        <Project title="Project 4"/>
-                        <Project title="Project 7"/>
+                        <Project title={project1}/>
+                        <Project title={project4}/>
+                        <Project title={project7}/>
 
-                        <Project title="Project 2"/>
-                        <Project title="Project 5"/>
+                        <Project title={project2}/>
+                        <Project title={project5}/>
 
                         
 

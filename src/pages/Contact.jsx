@@ -1,7 +1,7 @@
 
 import { useForm } from "react-hook-form"
 import { motion } from "framer-motion"
-
+import contactImage from "../assets/contact-image.jpeg"
 import LineDiv from "../component/LineDiv";
 
 const Contact = ()=>{
@@ -48,7 +48,7 @@ const Contact = ()=>{
                      before:w-full before:max-w-[500px] before:h-full before:border-8 before:border-red
                     before:z-[-1]">
 
-            <img src="src/assets/contact-image.jpeg" alt="contact"></img>
+            <img src={contactImage} alt="contact"></img>
 
                     </div>
                     </div>
