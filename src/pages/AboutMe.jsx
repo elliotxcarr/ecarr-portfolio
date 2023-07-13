@@ -2,6 +2,7 @@ import React from "react"
 import { motion} from "framer-motion"
 import skillsList from "../component/skillsList"
 import useMediaQuery from "../hooks/useMediaQuery"
+import skillsLogos from "../assets/skillLogos.png"
 
 const AboutMe = () =>{
 
@@ -44,7 +45,7 @@ const AboutMe = () =>{
                             visible: {opacity:1, x:0}
                         }}>
 
-                       <img className="sm:max-w-[600px]"  src="src/assets/skillLogos.png" alt="logos"></img>
+                       <img className="sm:max-w-[600px]"  src={skillsLogos} alt="logos"></img>
 
                 </motion.div>
                  
