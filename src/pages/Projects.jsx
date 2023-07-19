@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import Web from "../component/Web";
 import Mobile from "../component/Mobile";
+import Games from "../component/Games";
+import ThreeDWork from "../component/3D";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 
@@ -128,6 +130,8 @@ var tabs =[ {
                 </motion.div>
                 {selectedTab ==="web" ? (<Web/>):<div></div>}
                 {selectedTab ==="mob" ? (<Mobile/>):<div></div>}
+                {selectedTab ==="3d" ? (<ThreeDWork/>):<div></div>}
+                {selectedTab ==="game" ? (<Games/>):<div></div>}
                 
                 
 
