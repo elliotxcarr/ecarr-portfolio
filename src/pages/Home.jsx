@@ -7,11 +7,12 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Home = ({selectedPage, setSelectedPage})=>{
+
     const isAboveLarge = useMediaQuery("(min-width:1060px)");
     const isAboveMed = useMediaQuery("(min-width: 760px )")
     return(
         <>
-        <div className=" flex absolute object-cover w-full  ">
+        <div className=" flex absolute object-cover w-full ">
         {isAboveLarge ? (
             <video src={video} muted autoPlay  loop type='video/mp4'>
             

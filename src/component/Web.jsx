@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState , useRef} from "react"
 
 import Modal from "./ProjectModal"
 
@@ -13,7 +13,8 @@ const projectVariant = {
 }
 
 
-
+import Lottie from 'lottie-react';
+import construction from '../assets/construction.json'
 
 
 const Web = () =>{
@@ -26,10 +27,13 @@ const Web = () =>{
     const [desc, setDesc]= useState()
     const [link, setLink]= useState()
 
-
+    const ref = useRef(null)
     
     const handleModal = (id, name, desc, img, link)=>{
+
+        ref.current?.scrollIntoView({block:'center',behavior:'smooth'})
         
+
             setOpenModal(true);
            
             setSelectedProject(name);
@@ -37,26 +41,28 @@ const Web = () =>{
             setDesc(desc);
             setLink(link);
             setImgUrl(img);
-            console.log(name)
+         
 
-      
-        
-        
-        
         
     }
+    
 
     return(
-                <section > 
+                <section id="websec" > 
                 
-                <p className="mt-10 mb-7 justify-center mx-5 text-center md:text-normal flex">
-                        My previous website development primarily using ReactJS. I am familiar with standard CSS however I thoroughly enjoy using Tailwind as a more streamlined solution. PROJECTS PENDING
+               
+                <div className="flex justify-center w-full">
+                        <Lottie animationData={construction} loop={true} />
+                    </div>
+                
+                    <p className=" justify-center mx-5 text-3xl font-bold text-center md:text-normal flex" >
+                       PROJECTS PENDING
                     </p>
-
-                <div className={`flex justify-center `}>
+                    
+                {/* <div className={`flex justify-center `}  ref={ref} >
 
                     <motion.div
-                        className={`sm:grid sm:grid-cols-4 mx-20 gap-5 ${openModal ? document.body.style.overflow ='hidden'  : document.body.style.overflow ='scroll' }`}
+                        className={`sm:grid sm:grid-cols-4 mx-20 gap-5 ${openModal ? document.body.style.overflow ='hidden'  : document.body.style.overflow ='auto' }`}
                         
                         initial="hidden"
                         whileInView="visible"
@@ -75,6 +81,7 @@ const Web = () =>{
                                     bg-grey z-30 flex flex-col justify-center items-center text-center p-16 text-dark`;
                             return(
                                 <motion.div
+                                
                                     variants={projectVariant} className="relative">
 
                                     <div className={ overlayStyles} >
@@ -99,7 +106,7 @@ const Web = () =>{
                 </div>
 
                 <Modal open={openModal} id={id} selectedProject={selectedProject} description={desc} img={imgUrl} link={link} onClose={()=>{setOpenModal(false)}}/> 
-                
+                 */}
                 
                 </section>
       

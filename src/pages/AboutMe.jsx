@@ -4,18 +4,20 @@ import skillsList from "../component/skillsList"
 import useMediaQuery from "../hooks/useMediaQuery"
 import skillsLogos from "../assets/skillLogos.png"
 
-const AboutMe = () =>{
+const AboutMe = ({selectedPage, setSelectedPage}) =>{
 
     const isAboveSmall  = useMediaQuery("(min-width:768px)")
     const isAboveLarge = useMediaQuery("(min-width:1060px)")
+
+    
     return(
         
-        <section id="about" className="flex md:flex-row flex-col mb-10 relative w-full bg-dark md:h-full justify-between">
+        <section id="about" className="flex md:flex-row flex-col mb-10 relative w-full bg-dark md:h-full justify-between mx-auto">
         
         <div className="flex flex-col md:basis-3/6 justify-center md:p-10 md:mx-20 mt-14">
     
         <motion.div 
-        
+                        
                         initial="hidden"
                         whileInView="visible"
                         viewport={{once: true, amount:0.5}}

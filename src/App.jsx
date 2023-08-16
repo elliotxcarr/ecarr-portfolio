@@ -8,6 +8,8 @@ import useMediaQuery from './hooks/useMediaQuery';
 import Projects from "./pages/Projects";
 import LineDiv from './component/LineDiv';
 import Contact from './pages/Contact'
+import Modal from './component/ProjectModal';
+
 
 function App() {
 
@@ -15,6 +17,8 @@ function App() {
   const [selectedPage, setSelectedPage] = useState('home');
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isAboveMediumScreens = useMediaQuery("(min-width:1060px)");
+  
+  
 
   useEffect(()=>{
     const handleScroll = () =>{
@@ -51,15 +55,24 @@ function App() {
         </div>
         
 
-      <AboutMe/>
+      <AboutMe
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
 
       <LineDiv color='grey'/>
 
-      <Projects/>
+      <Projects
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
 
       <LineDiv color='grey'/>
 
-      <Contact/>
+      <Contact
+        selectedPage={selectedPage}
+        setSelectedPage={setSelectedPage}
+      />
       
 
    </div>
